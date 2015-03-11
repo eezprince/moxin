@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import net.sf.json.JSONArray;
+
 public class NearByServlet extends HttpServlet {
 
 	/**
@@ -39,9 +41,11 @@ public class NearByServlet extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		response.setContentType("text/json; charset=UTF-8");
+		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = response.getWriter();
 		//out.write(new Gson);
+		JSONArray jsonArray = new JSONArray();
+		out.print(jsonArray.toString());
 		out.flush();
 		out.close();
 	}
